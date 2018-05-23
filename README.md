@@ -11,9 +11,10 @@ Before writing this tutorial, I created two separate [Ansible](https://www.ansib
 
 ## Table of Contents
 
-* Introduction
-* Installing the Client Tools
-* Provisioning Compute Resources
+* [Introduction](README.md)
+* [Installing the Host Tools](docs/01-installing-the-host-tools.md)
+* [Provisioning Compute Resources](docs/02-provisioning-compute-resources.md)
+* [Installing the Client Tools](docs/03-installing-the-client-tools.md)
 * Provisioning the CA and Generating TLS Certificates
 * Generating the Data Encryption Config and Key
 * Installing the Docker Container Runtime Interface (CRI)

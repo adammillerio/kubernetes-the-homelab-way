@@ -76,4 +76,4 @@ sudo mv kubectl /usr/local/bin/
 
 The `kubectl version --client` command will output information about the `kubectl` tool if it is installed.
 
-Next: [Provisioning Compute Resources](03-provisioning-compute-resources.md)
+Next: [Provisioning the CA and Generating TLS Certificates](03-provisioning-the-ca-and-generating-tls-certificates.md)
