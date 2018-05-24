@@ -1,4 +1,4 @@
-# Installing the Client Tools
+# Installing the Host Tools
 
 In this lab, we will be installing the host tools that will be necessary to provision the K8S cluster compute resources in Section 2.
 
@@ -28,4 +28,4 @@ Installed Version: 2.1.1
 Latest Version: 2.1.1
 ```
 
-Next: [Provisioning Compute Resources](03-provisioning-compute-resources.md)
+Next: [Provisioning Compute Resources](02-provisioning-compute-resources.md)
