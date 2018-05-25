@@ -1,1 +1,4 @@
 .vagrant/*
+*.pem
+*.csr
+*.json
