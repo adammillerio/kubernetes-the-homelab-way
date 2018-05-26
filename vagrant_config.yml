@@ -10,7 +10,3 @@ config:
     count: 2
     cpu: 2
     memory: 1024
-  client:
-    enabled: true
-    cpu: 1
-    memory: 512
