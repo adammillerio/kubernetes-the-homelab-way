@@ -1,4 +1,4 @@
-# 4: Provisioning the CA and Generating TLS Certificates
+# 3: Provisioning the CA and Generating TLS Certificates
 
 ## Overview
 

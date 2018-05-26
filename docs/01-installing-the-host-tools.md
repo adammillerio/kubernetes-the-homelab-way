@@ -1,4 +1,4 @@
-# Installing the Host Tools
+# 1: Installing the Host Tools
 
 In this lab, we will be installing the host tools that will be necessary to provision the K8S cluster compute resources in Section 2. In addition, we will be installing the tools necessary to administrate the Kubernetes cluster.
 
