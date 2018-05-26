@@ -168,4 +168,4 @@ Then, follow the installation instructions.
 
 You should now have a "Git Bash" option in the Windows menu. Make sure that you use this for all subsequent sections.
 
-Next: [Provisioning Compute Resources](02-provisioning-compute-resources.md)
+Next: [Configuring Environment Variables](02-configuring-environment-variables.md)

@@ -612,4 +612,4 @@ done
 
 The rest of the certificates will be used in later sections.
 
-Next: [Generating the Data Encryption Config and Key](04-generating-the-data-encryption-config-and-key.md)
+Next: [Generating the Data Encryption Config and Key](05-generating-the-data-encryption-config-and-key.md)
