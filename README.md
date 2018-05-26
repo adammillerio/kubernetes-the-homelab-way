@@ -14,8 +14,7 @@ Before writing this tutorial, I created two separate [Ansible](https://www.ansib
 * [Introduction](README.md)
 * [Installing the Host Tools](docs/01-installing-the-host-tools.md)
 * [Provisioning Compute Resources](docs/02-provisioning-compute-resources.md)
-* [Installing the Client Tools](docs/03-installing-the-client-tools.md)
-* Provisioning the CA and Generating TLS Certificates
+* [Provisioning the CA and Generating TLS Certificates](docs/03-provisioning-the-ca-and-generating-tls-certificates)
 * Generating the Data Encryption Config and Key
 * Installing the Docker Container Runtime Interface (CRI)
 * Provisioning the Kubernetes Masters
@@ -40,8 +39,8 @@ Having recently noticed that I was guilty of this, I set out to build a Kubernet
 
 * While I have tried to be as verbose as possible in explaing the various components of K8S, I will not be going into detail on Docker and containers in general, please refer to other tutorials to learn about them.
 * I wrote this using Debian 9 "Stretch" as a base. This is not a hard requirement, but certain sections of the tutorial will make use of `apt` for package management as well as `systemd` for running K8S services.
-* The Ansible playbooks described above have been built to target x86_64 architectures. While K8S does run on ARM based systems, I have not attempted this. If you do, I encourage you to modify these automations for your own purposes.
-* I assume that you have access to various compute resources that can be configured as K8S worker and master nodes. It is highly advised that you use some form of Hypervisor such as [VirtualBox](https://www.virtualbox.org/) or [VMWare](https://www.vmware.com/), however, any systems that meet the requirements above should work. This tutorial will create the following resources:
+* This tutorial targets x86_64 architectures. While K8S does run on ARM based systems, I have not attempted this. If you do, I encourage you to modify these automations for your own purposes.
+* This tutorial uses `vagrant` to provision compute resources for this cluster, however, any systems that meet the requirements above should work. This tutorial will create the following resources:
 	* 3 K8S master nodes
 	* 2 K8S worker nodes
-* K8S assumes that all nodes reside on the same "flat" network, where each one is capable of reaching one another. In addition, each node must have a fully routable dedicated IP address within this network. Ensure that your network meets these requirements, or you will quickly run into issues with cluster communication.
+* K8S assumes that all nodes reside on the same "flat" network, where each one is capable of reaching one another. In addition, each node must have a fully routable dedicated IP address within this network. The `vagrant` setup ensures this, however, if you use your own resources, ensure that your network meets these requirements, or you will quickly run into issues with cluster communication.

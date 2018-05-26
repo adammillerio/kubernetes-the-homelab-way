@@ -29,10 +29,6 @@ config:
     count: 2
     cpu: 2
     memory: 1024
-  client:
-    enabled: true
-    cpu: 1
-    memory: 512
 ```
 
 This file provides a set of configuration values that will be used in the corresponding [Vagrantfile](../Vagrantfile) to automatically bootstrap the compute resources. A brief explanation of each value is below:
@@ -47,16 +43,11 @@ This file provides a set of configuration values that will be used in the corres
 | worker.count | 3 | How many worker nodes will be provisioned |
 | worker.cpu | 2 | Numer of vCPUs that will be assigned to each worker node |
 | worker.memory | 1024 | Memory (in megabytes) that will be assigned to each worker node |
-| client.enabled | true | Whether or not the "client" machine is to be provisioned |
-| client.cpu | 1 | Number of vCPUs that will be assigned to the client node |
-| client.memory | 512 | Memory (in megabytes) that will be assigned to the client node |
-
-The client machine is an optional component that will serve as a reference Linux machine to work through this tutorial on. The tutorial will assume you are using the client machine, but the same steps can be performed via the host machine easily.
 
 I would strongly recommend that you modify these values so that they do not over-provision the resources available on your local machine. For example, in this reference configuration, the following resources will be used:
 
-* (3 * 1024) + (2 * 1024) + (1 * 512) = 5656MB of RAM
-* (3 * 2) + (2 * 2) + (1 * 1) = 11 vCPUs
+* (3 * 1024) + (2 * 1024) = 5144MB of RAM
+* (3 * 2) + (2 * 2) = 10 vCPUs
 
 After configuring the Vagrant setup to your liking, run the `vagrant up` command. This will perform the following steps for each node:
 
@@ -64,9 +55,6 @@ After configuring the Vagrant setup to your liking, run the `vagrant up` command
 * Boot the virtual machine
 * Configure a second host-only network adapter on the private network as configured
 * Set the hostname
-* Install the `avahi` daemon to enable mDNS discovery of other nodes in the cluster
-
-The purpose of mDNS is to allow for the use of a `.local` subdomain for reaching other nodes in the cluster. For example, to reach master2, instead of connecting to `10.0.0.11` we can connect to `master2.local` instead.
 
 ### Verification
 
@@ -87,7 +75,7 @@ above with their current state. For more information about a specific
 VM, run `vagrant status NAME`.
 ```
 
-To verify the private network is functioning correctly, ssh into the first master node and attempt to ping the first worker node at `worker1.local`:
+To verify the private network is functioning correctly, ssh into the first master node and attempt to ping the first worker node at it's IP address:
 
 ```bash
 > vagrant ssh master1
@@ -100,8 +88,8 @@ individual files in /usr/share/doc/*/copyright.
 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
 permitted by applicable law.
 Last login: Thu May 24 03:26:46 2018 from 10.0.2.2
-vagrant@master1:~$ ping -c 3 worker1.local
-PING worker1.local (10.0.0.21) 56(84) bytes of data.
+vagrant@master1:~$ ping -c 3 10.0.0.21
+PING 10.0.0.21 (10.0.0.21) 56(84) bytes of data.
 64 bytes from 10.0.0.21 (10.0.0.21): icmp_seq=1 ttl=64 time=0.169 ms
 64 bytes from 10.0.0.21 (10.0.0.21): icmp_seq=2 ttl=64 time=0.228 ms
 64 bytes from 10.0.0.21 (10.0.0.21): icmp_seq=3 ttl=64 time=0.252 ms
