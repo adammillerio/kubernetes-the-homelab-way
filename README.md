@@ -14,7 +14,7 @@ Before writing this tutorial, I created two separate [Ansible](https://www.ansib
 * [Introduction](README.md)
 * [Installing the Host Tools](docs/01-installing-the-host-tools.md)
 * [Provisioning Compute Resources](docs/02-provisioning-compute-resources.md)
-* [Provisioning the CA and Generating TLS Certificates](docs/03-provisioning-the-ca-and-generating-tls-certificates)
+* [Provisioning the CA and Generating TLS Certificates](docs/03-provisioning-the-ca-and-generating-tls-certificates.md)
 * Generating the Data Encryption Config and Key
 * Installing the Docker Container Runtime Interface (CRI)
 * Provisioning the Kubernetes Masters
