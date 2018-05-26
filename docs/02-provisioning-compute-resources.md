@@ -101,4 +101,4 @@ rtt min/avg/max/mdev = 0.169/0.216/0.252/0.036 ms
 
 If you are able to ping the worker node, move on to the next section.
 
-Next: [Installing the Client Tools](03-installing-the-client-tools.md)
+Next: [Provisioning the CA and Generating TLS Certificates](03-provisioning-the-ca-and-generating-tls-certificates.md)
