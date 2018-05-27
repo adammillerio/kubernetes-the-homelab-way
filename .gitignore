@@ -3,4 +3,6 @@
 *.csr
 *.json
 *.yml
+*.tgz
+*.service
 .env
