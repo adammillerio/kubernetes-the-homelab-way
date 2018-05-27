@@ -40,4 +40,4 @@ for i in $(seq 1 ${MASTER_NODE_COUNT}); do
 done
 ```
 
-Next: [Installing the Docker Container Runtime Interface (CRI)][06-installing-the-docker-container-runtime-interface.md]
+Next: [Installing the Docker Container Runtime Interface (CRI)](06-installing-the-docker-container-runtime-interface.md)
