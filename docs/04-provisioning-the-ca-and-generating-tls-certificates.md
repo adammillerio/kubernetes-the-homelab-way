@@ -590,26 +590,4 @@ service-account-key.pem
 service-account.pem
 ```
 
-## Distribute the Client Certificates
-
-Now that we have generated the client certificates, we can distribute them to their respective servers:
-
-```bash
-for i in $(seq 1 ${MASTER_NODE_COUNT}); do
-  vagrant scp ca.pem master${i}:~/
-  vagrant scp master${i}.pem master${i}:~/
-  vagrant scp master${i}-key.pem master${i}:~/
-done
-```
-
-```bash
-for i in $(seq 1 ${WORKER_NODE_COUNT}); do
-  vagrant scp ca.pem worker${i}:~/
-  vagrant scp worker${i}.pem worker${i}:~/
-  vagrant scp worker${i}-key.pem worker${i}:~/
-done
-```
-
-The rest of the certificates will be used in later sections.
-
 Next: [Generating the Data Encryption Config and Key](05-generating-the-data-encryption-config-and-key.md)

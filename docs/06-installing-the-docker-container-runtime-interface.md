@@ -85,11 +85,11 @@ Description=Docker Application Container Engine
 Documentation=http://docs.docker.io
 
 [Service]
-ExecStart=/usr/local/bin/docker daemon \
-  --iptables=false \
-  --ip-masq=false \
-  --host=unix:///var/run/docker.sock \
-  --log-level=error \
+ExecStart=/usr/local/bin/docker daemon \\
+  --iptables=false \\
+  --ip-masq=false \\
+  --host=unix:///var/run/docker.sock \\
+  --log-level=error \\
   --storage-driver=overlay
 Restart=on-failure
 RestartSec=5
@@ -136,21 +136,9 @@ done
 On any node, run the `ps -aux | grep docker` command, and it should return the `docker` daemon's process information:
 
 ```bash
-> vagrant ssh master1
-Linux master1 4.9.0-6-amd64 #1 SMP Debian 4.9.82-1+deb9u3 (2018-03-02) x86_64
-
-The programs included with the Debian GNU/Linux system are free software;
-the exact distribution terms for each program are described in the
-individual files in /usr/share/doc/*/copyright.
-
-Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
-permitted by applicable law.
-Last login: Sun May 27 00:55:53 2018 from 10.0.2.2
 vagrant@master1:~$ ps -aux | grep docker
 root     12828  0.1  3.4 317248 35240 ?        Ssl  00:57   0:00 dockerd --iptables=false --ip-masq=false --host=unix:///var/run/docker.sock --log-level=error --storage-driver=overlay
-root     12838  0.0  0.8 137560  8704 ?        Ssl  00:57   0:00 docker-containerd -l unix:///var/run/docker/libcontainerd/docker-containerd.sock --metrics-interval=0 --start-timeout 2m --state-dir /var/run/docker/libcontainerd/containerd
---shim docker-containerd-shim --runtime docker-runc
-vagrant  12939  0.0  0.0  12784  1020 pts/0    S+   01:00   0:00 grep docker
+root     12838  0.0  0.8 137560  8704 ?        Ssl  00:57   0:00 docker-containerd -l unix:///var/run/docker/libcontainerd/docker-containerd.sock --metrics-interval=0 --start-timeout 2m --state-dir /var/run/docker/libcontainerd/containerd --shim docker-containerd-shim --runtime docker-runc
 ```
 
 Next: [Installing the Kubernetes Node Agent (Kubelet)](07-installing-the-kubernetes-node-agent.md)
