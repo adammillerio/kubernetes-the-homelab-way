@@ -16,7 +16,7 @@ Before writing this tutorial, I created two separate [Ansible](https://www.ansib
 * [Configuring Environment Variables](docs/02-configuring-environment-variables.md)
 * [Provisioning Compute Resources](docs/03-provisioning-compute-resources.md)
 * [Provisioning the CA and Generating TLS Certificates](docs/04-provisioning-the-ca-and-generating-tls-certificates.md)
-* Generating the Data Encryption Config and Key
+* [Generating the Data Encryption Config and Key](docs/05-generating-the-data-encryption-config-and-key.md)
 * Installing the Docker Container Runtime Interface (CRI)
 * Provisioning the Kubernetes Masters
 	* Installing the Kubernetes Node Agent (Kubelet)
