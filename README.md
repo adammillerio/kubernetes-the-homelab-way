@@ -18,9 +18,9 @@ Before writing this tutorial, I created two separate [Ansible](https://www.ansib
 * [Provisioning the CA and Generating TLS Certificates](docs/04-provisioning-the-ca-and-generating-tls-certificates.md)
 * [Generating the Data Encryption Config and Key](docs/05-generating-the-data-encryption-config-and-key.md)
 * [Installing the Docker Container Runtime Interface (CRI)](docs/06-installing-the-docker-container-runtime-interface.md)
+* [Installing the Kubernetes Node Agent (Kubelet)](docs/07-installing-the-kubernetes-node-agent.md)
 * [Configuring Node Auto-Discovery](docs/08-configuring-node-auto-discovery.md)
 * Provisioning the Kubernetes Masters
-	* Installing the Kubernetes Node Agent (Kubelet)
 	* Bootstrapping the etcd Cluster
 	* Bootstrapping the Kubernetes Control Plane
 	* Installing the flannel Container Network Interface (CNI)
