@@ -402,6 +402,7 @@ With the files created, we will copy the Unit files to each master node, reload 
 for i in $(seq 1 ${MASTER_NODE_COUNT}); do
 vagrant scp master${i}-kubelet.service master${i}:~/kubelet.service
 vagrant ssh master${i} -- <<EOF
+sudo mkdir -pv /etc/kubernetes/manifests
 sudo chown -v root:root kubelet.service
 sudo mv -v kubelet.service /etc/systemd/system/kubelet.service
 sudo systemctl daemon-reload
@@ -417,6 +418,7 @@ And on the worker nodes:
 for i in $(seq 1 ${WORKER_NODE_COUNT}); do
 vagrant scp worker${i}-kubelet.service worker${i}:~/kubelet.service
 vagrant ssh worker${i} -- <<EOF
+sudo mkdir -pv /etc/kubernetes/manifests
 sudo chown -v root:root kubelet.service
 sudo mv -v kubelet.service /etc/systemd/system/kubelet.service
 sudo systemctl daemon-reload
