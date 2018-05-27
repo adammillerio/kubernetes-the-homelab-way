@@ -1,0 +1,12 @@
+---
+config:
+  box: "debian/contrib-stretch64"
+  network: 10.0.0.0
+  master:
+    count: 3
+    cpu: 2
+    memory: 1024
+  worker:
+    count: 2
+    cpu: 2
+    memory: 1024
