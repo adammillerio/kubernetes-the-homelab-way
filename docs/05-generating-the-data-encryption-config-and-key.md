@@ -17,7 +17,7 @@ This grabs the first 32 characters from the system's pseudo-random number genera
 Now, we generate the encryption configuration file:
 
 ```bash
-cat > encryption-config.yaml <<EOF
+cat > encryption-config.yml <<EOF
 apiVersion: v1
 kind: EncryptionConfig
 resources:
