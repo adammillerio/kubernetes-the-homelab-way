@@ -20,12 +20,10 @@ Before writing this tutorial, I created two separate [Ansible](https://www.ansib
 * [Installing the Docker Container Runtime Interface (CRI)](docs/06-installing-the-docker-container-runtime-interface.md)
 * [Installing the Kubernetes Node Agent (Kubelet)](docs/07-installing-the-kubernetes-node-agent.md)
 * [Configuring Node Auto-Discovery](docs/08-configuring-node-auto-discovery.md)
-* Provisioning the Kubernetes Masters
-	* Bootstrapping the etcd Cluster
-	* Bootstrapping the Kubernetes Control Plane
-	* Installing the flannel Container Network Interface (CNI)
-	* Installing the Kubernetes DNS Addon (kube-dns)
-* Provisioning the Kubernetes Workers
+* [Bootstrapping the etcd Cluster](docs/09-bootstrapping-the-etcd-cluster.md)
+* Bootstrapping the Kubernetes Control Plane
+* Installing the flannel Container Network Interface (CNI)
+* Installing the Kubernetes DNS Addon (kube-dns)
 * Configuring Kubectl for Remote Access
 * Smoke Test
 

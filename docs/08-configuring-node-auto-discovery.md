@@ -276,7 +276,7 @@ Unfortunately, the method of doing this differs significantly between operating 
 
 ```
   config.vm.provision "shell",
-    inline: "sed -i '1s/^/nameserver 127.0.0.1 \\n/' /etc/resolv.conf",
+    inline: "grep -q -F 'nameserver 127.0.0.1' /etc/resolv.conf || sed -i '1s/^/nameserver 127.0.0.1 \\n/' /etc/resolv.conf",
     run: "always",
     privileged: true
 ```

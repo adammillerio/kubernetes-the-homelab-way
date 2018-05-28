@@ -299,27 +299,33 @@ cat > kubernetes-csr.json <<EOF
 EOF
 ```
 
-Then, generate the certificate:
+Next, we aggregate the internal hostnames of each master:
 
 ```bash
 for i in $(seq 1 ${MASTER_NODE_COUNT}); do
   if [[ ${i} == 1 ]]; then
-    export MASTER_LIST="master1.local"
+    export MASTER_LIST="master1.node.local.consul"
   else
-    export MASTER_LIST="${MASTER_LIST},master${i}.local"
+    export MASTER_LIST="${MASTER_LIST},master${i}.node.local.consul"
   fi
 done
+```
 
+This gives us a list similar to `master1.node.local.consul,master2.node.local.consul,master3.node.local.consul`. These DNS names are currently not valid, but will be once we configure Consul service discovery in section 8.
+
+Then, generate the certificate:
+
+```bash
 cfssl gencert \
   -ca=ca.pem \
   -ca-key=ca-key.pem \
   -config=ca-config.json \
-  -hostname=${MASTER_LIST},127.0.0.1,kubernetes.default \
+  -hostname=${MASTER_LIST},127.0.0.1,100.64.0.1,kubernetes.default \
   -profile=kubernetes \
   kubernetes-csr.json | cfssljson -bare kubernetes
 ```
 
-The loop at the beginning is to create a comma-separated list of master node hostnames. In addition, the `kubernetes.default` host is provided as well. This is the hostname of the Kubernetes "Service" corresponding to the API server. It is the address that any application running within the cluster will use to reach the API. This is then passed into the certificate generation.
+The `kubernetes.default` host as well as `100.64.0.1` are provided as well. The first one is the hostname of the Kubernetes "Service" corresponding to the API server. It is the address that any application running within the cluster will use to reach the API. The second address will be the IP address of the API service from within the cluster. This is then passed into the certificate generation.
 
 ### Verification
 
